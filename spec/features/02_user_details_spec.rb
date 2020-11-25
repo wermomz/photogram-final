@@ -351,6 +351,8 @@ describe "/users/[USERNAME]" do
     photo.image = File.open Rails.root + "spec/support/kirb.gif"
     photo.caption = "Some test caption"
     photo.owner_id = drew_mc.id
+    photo.likes_count = 2
+    photo.comments_count = 0
     photo.save
 
     like = Like.new

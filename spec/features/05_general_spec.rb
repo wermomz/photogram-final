@@ -195,6 +195,8 @@ describe "The home page" do
     photo = Photo.new
     photo.owner_id = anna_belle.id
     photo.image = File.open(Rails.root + "spec/support/kirb.gif")
+    photo.likes_count = 0
+    photo.comments_count = 0
     photo.caption = "anna's caption"
     photo.save
 
@@ -230,6 +232,8 @@ describe "The home page" do
     photo.owner_id = anna_belle.id
     photo.image = File.open(Rails.root + "spec/support/kirb.gif")
     photo.caption = "anna's caption"
+    photo.likes_count = 1
+    photo.comments_count = 0
     photo.save
 
     like = Like.new
